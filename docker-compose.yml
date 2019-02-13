@@ -16,7 +16,7 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - ./wp:/bitnami/wordpress
+      - ./wp:/bitnami
     depends_on:
       - mariadb
     environment:
@@ -25,6 +25,12 @@ services:
       - WORDPRESS_DATABASE_USER=${USERNAME}
       - WORDPRESS_DATABASE_NAME=${DATABASE}
       - ALLOW_EMPTY_PASSWORD=yes
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
 volumes:
   mariadb_data:
     driver: local
