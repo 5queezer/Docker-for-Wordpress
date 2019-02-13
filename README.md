@@ -4,7 +4,7 @@ This is a dockerized solution for Wordpress which is based on Bitnami images. It
 
 Following images will be used:
 - bitnami/wordpress with xdebug enabled
-- bitnami/mariadb
+- bitnami/mariadb with an empty password
 - adminer
 
 ## Installation
@@ -14,6 +14,10 @@ Installation requirements:
 - docker installed
 - available ports 80 and 8080
 
+### .env file
+
+Copy the `.env.sample` to `.env` and set the username and the database name.
+
 ### Run the Container
 
 Start the containers with `docker-compose up -d`. This will download and build them if it is the first time. A new directory `wp/` will be created.
@@ -21,6 +25,10 @@ Start the containers with `docker-compose up -d`. This will download and build t
 ### Install Wordpress core files
 
 Download and extract your wordpress files into `wp/wordpress`. This is the Apache server root folder.
+
+### Configure your wordpress installation
+
+Adapt your `wp-config.php` to match the settings in the `.env` file. Remember that the password is empty. The database hostname in `wp-config.php` should be changed to `mariadb`, which corresponds to the the service name in `docker-compose.yml`
 
 ## Useful commands
 
