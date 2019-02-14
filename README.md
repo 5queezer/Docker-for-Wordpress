@@ -20,7 +20,7 @@ Copy the `.env.sample` to `.env` and set the username and the database name.
 
 ### Run the Container
 
-Start the containers with `docker-compose up -d`. This will download and build them if it is the first time. A new directory `wp/` will be created.
+Start the containers with `docker-compose up -d`. This will download and build them if it is the first time. New directories `src/`, `etc/apache` and `etc/php` will be created.
 
 ### Install Wordpress core files
 

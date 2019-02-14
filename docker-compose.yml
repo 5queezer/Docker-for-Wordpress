@@ -16,7 +16,9 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - ./wp:/bitnami
+      - ./src:/bitnami/wordpress
+      - ./etc/php:/bitnami/php
+      - ./etc/apache:/bitnami/apache
     depends_on:
       - mariadb
     environment:
